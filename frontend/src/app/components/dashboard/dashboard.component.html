@@ -1,0 +1,128 @@
+<div class="grid-container">
+  <!-- Summary Cards -->
+  <mat-grid-list [cols]="summaryCols" rowHeight="120px" gutterSize="10px" class="summary">
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>No of Employees</mat-card-title>
+        <mat-card-content>{{ numberOfEmployees }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>Attrition</mat-card-title>
+        <mat-card-content>{{ attrition }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>Attrition Rate</mat-card-title>
+        <mat-card-content>{{ attritionRate | number: '1.2-2' }}%</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>Avg Age</mat-card-title>
+        <mat-card-content>{{ avgAge | number: '1.0-0' }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>Avg Salary</mat-card-title>
+        <mat-card-content>{{ avgSalary | currency }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card>
+        <mat-card-title>Avg Year</mat-card-title>
+        <mat-card-content>{{ avgYears | number: '1.0-0' }}</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>  
+  <!-- Charts Card -->
+  <mat-grid-list [cols]="chartCols" rowHeight="450px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Gender</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionByGender">{{genderChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="chartColSpan" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Salary Range</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionBySalary">{{salaryChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Education</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionByEducation">{{educationChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Job Role</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionByJobRole">{{jobRoleChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Age Group</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionByAgeGroup">{{ageGroupChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="chartColSpan" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Year at Company</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attritionByYearsAtCompany">{{yearAtCompanyChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              <div>Attrition By Overtime</div>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div class="colspan1Chart"><canvas id="attriotionByOverTime">{{overTimeChart}}</canvas></div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+</div>

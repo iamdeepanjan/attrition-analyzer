@@ -1,0 +1,35 @@
+.container {
+  width: 400px;
+  padding: 10px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 17px;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.employee-details {
+  display: grid;
+  gap: 12px;
+}
+
+.employee-details__field {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.employee-details__field-label {
+  font-weight: 350;
+}
+
+.employee-details__field-value {
+  font-weight: 500;
+}

@@ -1,0 +1,50 @@
+<div class="grid-container">
+  <mat-grid-list [cols]="cols" rowHeight="330px">
+    @for(notification of displayedEmployees; track notification.id){
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="mat-card">
+        <mat-card-header class="mat-card-header">
+          <mat-card-title class="mat-card-title">
+            <div>{{ notification.name }}</div>
+          </mat-card-title>
+          <mat-card-subtitle class="mat-card-subtitle">
+            <span>{{ notification.jobRole }}</span>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="mat-card-content">
+          <div class="emp_detail_field">
+            <span class="emp_detail_label">Employee ID</span>
+            <span class="emp_detail_value">: {{ notification.employeeId }}</span>
+          </div>
+          <div class="emp_detail_field">
+            <span class="emp_detail_label">Age</span>
+            <span class="emp_detail_value">: {{ notification.age }}</span>
+          </div>
+          <div class="emp_detail_field">
+            <span class="emp_detail_label">Salary</span>
+            <span class="emp_detail_value">: {{ notification.salary }}</span>
+          </div>
+          <div class="emp_detail_field">
+            <span class="emp_detail_label">Year at Company</span>
+            <span class="emp_detail_value">: {{ notification.yearsAtCompany }}</span>
+          </div>
+          <div class="emp_detail_field">
+            <span class="emp_detail_label">Comment</span>
+            <span class="emp_detail_value">: {{ notification.comment.length > 12 ? (notification.comment | slice: 0:12) + '...' : notification.comment }} </span>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-raised-button (click)="openDialog(notification)">Expand<mat-icon>expand_content</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
+</div>
+<mat-paginator
+  [length]="notifiedEmployees.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[6, 18, 30]"
+  aria-label="Select page"
+>
+</mat-paginator>

@@ -1,0 +1,29 @@
+<div class="container">
+    <h2 mat-dialog-title>Update Notification for {{data.name}}</h2>
+    <mat-dialog-content>
+      <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()" class="form">
+        <mat-form-field class="full-width">
+          <mat-label>Comment</mat-label>
+          <textarea
+            matInput
+            placeholder="Add some comment"
+            formControlName="comment"
+          ></textarea>
+          @if(comment?.hasError('required')){
+            <mat-error>
+              Comment is required.
+            </mat-error>
+          }
+          @if(comment?.hasError('minlength')){
+            <mat-error>
+              Comment must be at least 5 characters long.
+            </mat-error>
+          }
+        </mat-form-field>
+        <mat-dialog-actions align="end">
+          <button mat-raised-button color="primary" type="submit" [disabled]="notificationForm.invalid">Submit</button>
+        </mat-dialog-actions>
+      </form>
+    </mat-dialog-content>
+  </div>
+  

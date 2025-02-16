@@ -1,0 +1,138 @@
+<div class="container">
+  <h2 mat-dialog-title>Employee Details</h2>
+  <mat-dialog-content>
+    <div class="employee-details">
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Employee ID  </span>
+        <span class="employee-details__field-value"> : {{ data.EmployeeID }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">First Name  </span>
+        <span class="employee-details__field-value"> : {{ data.FirstName }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Last Name  </span>
+        <span class="employee-details__field-value"> : {{ data.LastName }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Gender  </span>
+        <span class="employee-details__field-value"> : {{ data.Gender }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Age  </span>
+        <span class="employee-details__field-value"> : {{ data.Age }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Business Travel  </span>
+        <span class="employee-details__field-value"> : {{
+          data.BusinessTravel
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Department  </span>
+        <span class="employee-details__field-value"> : {{ data.Department }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Distance From Home  </span>
+        <span class="employee-details__field-value"
+          > : {{ data.DistanceFromHome_km }} km</span
+        >
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">State  </span>
+        <span class="employee-details__field-value"> : {{ data.State }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Ethnicity  </span>
+        <span class="employee-details__field-value"> : {{ data.Ethnicity }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Education  </span>
+        <span class="employee-details__field-value"> : {{ data.Education }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Education Field  </span>
+        <span class="employee-details__field-value"> : {{
+          data.EducationField
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Job Role </span>
+        <span class="employee-details__field-value"> : {{ data.JobRole }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Marital Status </span>
+        <span class="employee-details__field-value"> : {{
+          data.MaritalStatus
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Salary </span>
+        <span class="employee-details__field-value"> : {{
+          data.Salary | currency
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Stock Option Level </span>
+        <span class="employee-details__field-value"> : {{
+          data.StockOptionLevel
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Over Time </span>
+        <span class="employee-details__field-value"> : {{ data.OverTime }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Hire Date </span>
+        <span class="employee-details__field-value"> : {{
+          data.HireDate | date :  "dd/MM/yyyy"
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Years At Company  </span>
+        <span class="employee-details__field-value"> : {{
+          data.YearsAtCompany
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label"
+          >Years In Most Recent Role
+        </span>
+        <span class="employee-details__field-value"> : {{
+          data.YearsInMostRecentRole
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label"
+          >Years Since Last Promotion
+        </span>
+        <span class="employee-details__field-value"> : {{
+          data.YearsSinceLastPromotion
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label"
+          >Years With Current Manager
+        </span>
+        <span class="employee-details__field-value"> : {{
+          data.YearsWithCurrManager
+        }}</span>
+      </div>
+      <div class="employee-details__field">
+        <span class="employee-details__field-label">Attrition</span>
+        <span class="employee-details__field-value"> : {{ data.Attrition }}</span>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    (click)="openDialog()"
+  >
+    Notify
+  </button>
+</mat-dialog-actions>

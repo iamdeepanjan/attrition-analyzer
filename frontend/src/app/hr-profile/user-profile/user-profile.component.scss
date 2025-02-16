@@ -1,0 +1,21 @@
+.user-details-card {
+  margin: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.error-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.error {
+  font-weight: bold;
+}

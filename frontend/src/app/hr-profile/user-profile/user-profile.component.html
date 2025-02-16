@@ -1,0 +1,25 @@
+@if(user){
+<mat-card class="user-details-card">
+  <mat-card-header>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Mobile:</strong> {{ user.mobile }}</p>
+    @if(user.age){
+    <p><strong>Age:</strong> {{ user.age }}</p>}
+    @if(user.gender){
+    <p><strong>Gender:</strong> {{ user.gender }}</p>}
+    @if(user.address){
+    <p><strong>Address:</strong> {{ user.address }}</p>}
+    @if(user.dob){
+    <p><strong>Date of Birth:</strong> {{ user.dob | date : "dd/MM/yyyy" }}</p>}
+  </mat-card-content>
+</mat-card>
+} @if(error){
+<mat-card class="error-card">
+  <mat-card-content>
+    <p class="error">{{ error }}</p>
+  </mat-card-content>
+</mat-card>
+}
